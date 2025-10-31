@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Social Media Profile </title>
+  <style>
+    body{
+      margin:0;
+      font-family:  ui-sans-serif, Arial;
+      background: blueviolet;
+      color:black;
+      padding: 20px;
+      display:flex;
+      justify-content:center;
+    }
+
+    .container{
+      width:100%;
+      display:grid;
+      grid-template-columns: 240px 1fr 300px;
+      align-items:start;
+    }
+
+    /* LEFT SIDEBAR */
+    .sidebar{
+      background:white;
+      border-radius:10px;
+      padding:18px;
+      min-height:200px;
+      box-shadow: 0 6px 18px rgba(2,6,23,0.6);
+    }
+    .nav-list{
+      gap:12px;
+    }
+    .nav-list a{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      padding:10px;
+      border-radius:10px;
+      color:blue;
+      text-decoration:none;
+    }
+    .nav-list a:hover{transform:translateY(-3px);
+      background:var(--glass)
+    }
+    .nav-icon{
+      width:36px;height:36px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      display:flex;align-items:center;justify-content:center;font-weight:700;color:white;font-size:14px;
+      box-shadow:0 4px 10px rgba(60,100,200,0.15);
+    }
+
+    /* PROFILE CARD (main top) */
+    .profile-card{
+      grid-column: 1 / span 2;
+      background:pink;
+      border-radius:10px;
+      overflow:hidden;
+      box-shadow: 0 10px 30px rgba(2,6,23,0.6);
+    }
+
+    .cover{
+      height:200px;
+      background:whitesmoke
+        url('https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1500&q=60');
+      background-size:cover;
+      background-position:center;
+      position:relative;
+    }
+
+    .cover::after{
+      content:"My Social Media page";
+      position:relative;
+      background:green;
+    }
+    .profile-body{
+      display:flex;
+      gap:18px;
+      padding:16px 18px 22px;
+      align-items:flex-start;
+    }
+
+    .avatar{
+      width:112px;height:112px;border-radius:18px;border:5px solid rgba(255,255,255,0.06);
+      background:white;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:36px;
+      font-weight:700;
+      color:white;
+      box-shadow:0 10px 30px rgba(8,12,24,0.6);
+    }
+
+    .profile-info{
+     display:flex;
+    
+    }
+   
+    .msg-btn{
+      padding:10px 14px;border-radius:10px;border:5px solid rgba(255,255,255,0.04);
+      background:transparent;color:black;cursor:pointer;font-weight:600;
+    }
+
+    /* STATS */
+    .stats{display:flex;gap:14px;margin-top:14px}
+    .stat{background:var(--soft);padding:10px 12px;border-radius:10px;color:var(--muted);display:flex;flex-direction:column;align-items:flex-start}
+    .stat strong{color:var(--text);font-size:16px}
+
+    /* MAIN FEED */
+    .feed{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:var(--radius);
+      padding:18px;
+      display:flex;
+      flex-direction:column;
+      gap:16px;
+      box-shadow: 0 8px 20px rgba(2,6,23,0.6);
+    }
+
+    .post{
+      background: linear-gradient(180deg, rgba(255,255,255,0.01), transparent);
+      border-radius:12px;padding:14px;display:flex;gap:12px;align-items:flex-start;border:1px solid rgba(255,255,255,0.02)
+    }
+    .post .meta{display:flex;gap:10px;align-items:center}
+    .post .meta .small-avatar{
+      width:44px;height:44px;border-radius:10px;background:linear-gradient(120deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;font-weight:700;color:white
+    }
+    .post .content{flex:1}
+    .post .content h3{margin:0;font-size:15px}
+    .post .content p{margin:6px 0 10px;color:var(--muted);font-size:14px;line-height:1.4}
+    .post .actions-row{display:flex;gap:12px;color:var(--muted);font-size:13px}
+
+    /* RIGHT SIDEBAR */
+    .right{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:var(--radius);
+      padding:16px;
+      height:max-content;
+      box-shadow: 0 8px 20px rgba(2,6,23,0.6);
+    }
+
+    .suggest{display:grid;gap:12px}
+    .suggest .user{
+      display:flex;gap:10px;align-items:center;padding:10px;border-radius:10px;background:var(--soft)
+    }
+    .suggest .mini-avatar{width:44px;height:44px;border-radius:8px;background:linear-gradient(120deg,var(--accent-2),var(--accent));display:flex;align-items:center;justify-content:center;color:white;font-weight:700}
+
+    /* Responsive */
+    @media (max-width:980px){
+      .container{grid-template-columns:1fr; padding:0}
+      .profile-card{grid-column:1}
+      .sidebar{order:2}
+      .right{order:3}
+      .profile-card{margin-bottom:8px}
+    }
+
+    @media (max-width:520px){
+      .avatar{width:88px;height:88px}
+      .profile-body{padding:12px}
+      .cover{height:120px}
+      body{padding:18px}
+    }
+
+    /* small utility */
+    .muted{color:var(--muted)}
+    a.small{font-size:13px;color:var(--muted);text-decoration:none}
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- LEFT NAV -->
+    <aside class="sidebar" aria-label="Main navigation">
+      <nav>
+        <ul class="nav-list">
+          <li><a href="#"><span class="nav-icon">H</span> Home</a></li>
+          <li><a href="#"><span class="nav-icon">P</span> Profile</a></li>
+          <li><a href="#"><span class="nav-icon">M</span> Messages</a></li>
+          <li><a href="#"><span class="nav-icon">N</span> Notifications</a></li>
+          <li><a href="#"><span class="nav-icon">S</span> Settings</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- PROFILE + FEED COLUMN -->
+    <main style="display:flex;flex-direction:column;gap:var(--gap)">
+
+      <!-- PROFILE HEADER -->
+      <section class="profile-card" aria-labelledby="profile-name">
+        <div class="cover" role="img" aria-label="Cover photo"></div>
+
+        <div class="profile-body">
+          <div class="avatar" aria-hidden="true">NJ</div>
+
+          <div class="profile-info">
+            <div style="display:flex;justify-content:space-between;align-items:start">
+              <div>
+                <h1 id="profile-name">Niran Jana</h1>
+                <div class="handle">@niranjana • Web Developer</div>
+              </div>
+              <div style="display:flex;flex-direction:column;align-items:flex-end;gap:8px">
+                <div class="actions">
+                  <!-- follow toggle with pure CSS -->
+                  <span class="follow-toggle">
+                    <input type="checkbox" id="follow" />
+                    <label for="follow"><span class="dot" aria-hidden="true"></span><span class="label-text">Follow</span></label>
+                  </span>
+                  <button class="msg-btn" title="Message">Message</button>
+                </div>
+                <div class="muted" style="font-size:13px">Member since 2023</div>
+              </div>
+            </div>
+
+            <p class="bio">Frontend developer who loves building clean interfaces and delightful user experiences. Currently exploring React, Node.js and modern CSS. Coffee enthusiast ☕ • Open to collaboration.</p>
+
+            <div class="stats" aria-hidden="true">
+              <div class="stat"><small class="muted">Posts</small><strong>128</strong></div>
+              <div class="stat"><small class="muted">Followers</small><strong>7.4K</strong></div>
+              <div class="stat"><small class="muted">Following</small><strong>380</strong></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FEED -->
+      <section class="feed" aria-label="Posts">
+        <!-- post composer (static; CSS-only) -->
+        <div class="post" style="flex-direction:column;gap:12px">
+          <div style="display:flex;gap:10px;align-items:flex-start">
+            <div class="small-avatar" style="width:56px;height:56px;border-radius:12px">NJ</div>
+            <div style="flex:1">
+              <textarea placeholder="What's happening?" rows="3" style="width:100%;resize:none;border-radius:10px;padding:12px;border:1px solid rgba(255,255,255,0.02);background:transparent;color:var(--text)"></textarea>
+            </div>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <div class="muted" style="font-size:13px">Add photo • Add topic</div>
+            <button style="padding:8px 14px;border-radius:10px;background:linear-gradient(90deg,var(--accent),var(--accent-2));border:none;color:white;font-weight:700;cursor:pointer">Post</button>
+          </div>
+        </div>
+
+        <!-- example posts -->
+        <article class="post">
+          <div class="meta">
+            <div class="small-avatar">NJ</div>
+          </div>
+          <div class="content">
+            <h3>Nailing a smooth onboarding flow</h3>
+            <p>Spent the morning refining the signup flow — smaller steps, clearer microcopy, and less cognitive load. Users should feel welcomed, not interrogated.</p>
+            <div class="actions-row">
+              <span>💬 12</span>
+              <span>🔁 8</span>
+              <span>❤ 210</span>
+              <span class="muted">• 2h</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="post">
+          <div class="meta">
+            <div class="small-avatar">AL</div>
+          </div>
+          <div class="content">
+            <h3>Design tip — use space generously</h3>
+            <p>Whitespace improves comprehension. It’s not wasted space; it’s structure.</p>
+            <div class="actions-row">
+              <span>💬 6</span>
+              <span>🔁 3</span>
+              <span>❤ 84</span>
+              <span class="muted">• 1d</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="post">
+          <div class="meta">
+            <div class="small-avatar">PT</div>
+          </div>
+          <div class="content">
+            <h3>New project: Portfolio revamp</h3>
+            <p>Launching a fresh portfolio layout this weekend — focus on speed, accessibility and case studies that tell a story.</p>
+            <div class="actions-row">
+              <span>💬 19</span>
+              <span>🔁 5</span>
+              <span>❤ 432</span>
+              <span class="muted">• 3d</span>
+            </div>
+          </div>
+        </article>
+
+      </section>
+    </main>
+
+    <!-- RIGHT SIDEBAR -->
+    <aside class="right" aria-label="Suggestions">
+      <h3 style="margin:0 0 10px 0">Who to follow</h3>
+      <div class="suggest">
+        <div class="user">
+          <div class="mini-avatar">AK</div>
+          <div style="flex:1">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <div>
+                <div style="font-weight:700">Akhil Roy</div>
+                <div class="muted" style="font-size:13px">@akhildev</div>
+              </div>
+              <button style="padding:6px 10px;border-radius:8px;background:transparent;border:1px solid rgba(255,255,255,0.04);cursor:pointer">Follow</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="user">
+          <div class="mini-avatar">SR</div>
+          <div style="flex:1">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <div>
+                <div style="font-weight:700">Sara Mehta</div>
+                <div class="muted" style="font-size:13px">@sara_design</div>
+              </div>
+              <button style="padding:6px 10px;border-radius:8px;background:transparent;border:1px solid rgba(255,255,255,0.04);cursor:pointer">Follow</button>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top:8px" class="muted small">Explore topics • Trending</div>
+      </div>
+    </aside>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,8 @@
+/* External stylesheet */
+body {
+  background-color: #f0f8ff; /* Hexadecimal color */
+}
+
+p {
+  border: 1px dashed #333;
+}

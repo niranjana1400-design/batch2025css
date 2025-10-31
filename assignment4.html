@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Niranjana — Portfolio</title>
+
+  <!-- Google font (only for typography) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="assignment4.css">
+  <meta name="description" content="Niranjana — developer portfolio showcasing skills, projects and contact details.">
+</head>
+<body>
+  <!-- Skip link for accessibility -->
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="brand" href="#hero" aria-label="Niranjana home">
+        <span class="brand-name">Niranjana</span>
+      </a>
+
+      <!-- nav checkbox trick for mobile -->
+      <input id="nav-toggle" type="checkbox" class="nav-toggle" aria-hidden="true">
+      <label for="nav-toggle" class="nav-toggle-label" aria-hidden="true">
+        <span></span>
+      </label>
+
+      <nav class="site-nav" role="navigation" aria-label="Primary">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#resume" class="cta">Resume</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="site-main">
+    <!-- HERO -->
+    <section id="hero" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-card">
+          <h1 class="hero-title">Hi — I'm <span class="accent">Niranjana</span></h1>
+          <p class="hero-sub">A frontend developer who crafts fast, accessible and delightful web experiences using HTML, CSS and progressive techniques.</p>
+
+          <div class="hero-cta">
+            <a href="#projects" class="btn">View Projects</a>
+            <a href="#contact" class="btn btn-ghost">Hire me</a>
+          </div>
+          
+          <ul class="hero-meta">
+            <li><strong>Location:</strong> India</li>
+            <li><strong>Role:</strong> Frontend Developer</li>
+          </ul>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <!-- Decorative card stack composed purely with CSS gradients & SVG -->
+          <div class="stack">
+            <div class="card card-1"></div>
+            <div class="card card-2"></div>
+            <div class="card card-3"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="panel">
+      <div class="container">
+        <div class="panel-grid">
+          <div class="panel-text">
+            <h2>About me</h2>
+            <p>I build interfaces that balance aesthetics with clarity. My work focuses on performance, accessibility, and attention to detail. I enjoy solving UI problems and turning ideas into polished, responsive interfaces.</p>
+
+            <p>I'm currently exploring modern CSS-only patterns and small progressive enhancements that don’t rely on heavy frameworks.</p>
+          </div>
+
+          <aside class="panel-stats" aria-labelledby="skills-heading">
+            <h3 id="skills-heading">Quick facts</h3>
+            <dl>
+              <div>
+                <dt>Experience</dt>
+                <dd>3+ years</dd>
+              </div>
+              <div>
+                <dt>Focus</dt>
+                <dd>Frontend, UX, Accessibility</dd>
+              </div>
+              <div>
+                <dt>Tools</dt>
+                <dd>HTML, CSS, Git</dd>
+              </div>
+            </dl>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="panel alt">
+      <div class="container">
+        <h2>Skills</h2>
+        <ul class="skill-list" aria-label="Skills and proficiency">
+          <li>
+            <span class="skill-name">HTML</span>
+            <span class="skill-bar" style="--pct:95%" aria-hidden="true"><span></span></span>
+          </li>
+          <li>
+            <span class="skill-name">CSS</span>
+            <span class="skill-bar" style="--pct:90%" aria-hidden="true"><span></span></span>
+          </li>
+          <li>
+            <span class="skill-name">JavaScript</span>
+            <span class="skill-bar" aria-hidden="true"><span></span></span>
+          </li>
+          <li>
+            <span class="skill-name">Accessibility</span>
+            <span class="skill-bar" style="--pct:85%" aria-hidden="true"><span></span></span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+     <section id="projects" class="section">
+    <h2>Projects</h2>
+    <div class="projects-container">
+      <div class="project">
+        <img src="images/project1.jpg" alt="Project 1">
+        <h3>Portfolio Website</h3>
+        <p>A personal portfolio website built using HTML and CSS.</p>
+      </div>
+      <div class="project">
+        <img src="images/project2.jpg" alt="Project 2">
+        <h3>To-Do App</h3>
+        <p>A simple task manager to organize your daily activities.</p>
+      </div>
+    </div>
+  </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="panel contact-panel" aria-labelledby="contact-heading">
+      <div class="container">
+        <h2 id="contact-heading">Get in touch</h2>
+
+        <div class="contact-grid">
+          <form class="contact-form" action="#" method="post" novalidate>
+            <label>
+              <span class="label">Name</span>
+              <input type="text" name="name" placeholder="Your name" required>
+            </label>
+
+            <label>
+              <span class="label">Email</span>
+              <input type="email" name="email" placeholder="you@example.com" required>
+            </label>
+
+            <label>
+              <span class="label">Message</span>
+              <textarea name="message" rows="6" placeholder="Tell me about your project..." required></textarea>
+            </label>
+
+            <p class="note">This is a static demo — form won’t actually send. Hook up a backend or use a form service to collect responses.</p>
+
+            <button type="submit" class="btn btn-full">Send message</button>
+          </form>
+
+          <aside class="contact-info">
+            <h3>Other ways</h3>
+            <p>Email: <a href="mailto:hello@example.com">hello@example.com</a></p>
+            <p>LinkedIn: <a href="#" rel="noopener">/in/niranjana</a></p>
+
+            <div class="socials">
+              <a href="#" aria-label="GitHub profile">GitHub</a>
+              <a href="#" aria-label="Twitter profile">Twitter</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="resume" class="panel small">
+      <div class="container">
+        <h2>Resume</h2>
+        <p>Download a printable resume or view highlights below.</p>
+        <ul class="timeline">
+          <li><strong>2024 — Present</strong> Frontend developer — Company A</li>
+          <li><strong>2022 — 2024</strong> UI Engineer — Startup B</li>
+          <li><strong>2021</strong> Graduated — B.COM. Computer Science</li>
+        </ul>
+        <p class="print-note">Tip: Press <kbd>Ctrl/Cmd + P</kbd> to print a neat resume layout.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year">2025</span> Niranjana — Crafted with CSS ❤</p>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="#hero">Top</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

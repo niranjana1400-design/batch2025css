@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flexbox Calculator</title>
+  <style>
+    .calculator {
+      display: flex;
+      flex-direction: column;
+      width: 250px;
+      margin: 50px auto;
+      border: 2px solid #3919ba;
+      border-radius: 10px;
+      padding: 10px;
+      background-color: #4aa188;
+    }
+
+    .display {
+      height: 50px;
+      background: #db0808;
+      border: 1px solid #0a0909;
+      margin-bottom: 10px;
+      font-size: 20px;
+      text-align: right;
+      padding: 10px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .buttons button {
+      flex: 1 0 22%;
+      height: 50px;
+    font-size: 20px;
+      border: none;
+      background-color: #4CAF50;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .buttons button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <div class="display">0</div>
+    <div class="buttons">
+      <button>7</button>
+      <button>8</button>
+      <button>9</button>
+      <button>/</button>
+      <button>4</button>
+      <button>5</button>
+      <button>6</button>
+      <button>*</button>
+      <button>1</button>
+      <button>2</button>
+      <button>3</button>
+      <button>-</button>
+      <button>0</button>
+      <button>.</button>
+      <button>=</button>
+      <button>+</button>
+    </div>
+  </div>
+</body>
+</html>

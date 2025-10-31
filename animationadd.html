@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            background-color: blue;
+            height: 10em;
+            width: 10em;
+            animation: square 3s infinite;
+            animation:circle 2s infinite;
+            animation: triangle 4s infinite;
+            /* animation-name: square;
+            animation-duration: 2s; */
+            
+        }
+         .circle{
+            width: 200%;
+            height: 200%;
+            background-color: rgb(255, 0, 149);
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+        .triangle{
+            width: 200%;
+            height: 200%;
+            background-color: rgb(4, 255, 0);
+            margin-right: 20px;
+        }
+        @keyframes square{
+            0% {background-color:red ;}
+            25%{background-color: green;}
+            50%{background-color: orange;}
+            100%{background-color: blueviolet;}
+        }
+        @keyframes  circle{
+            0% {background-color:rgb(7, 220, 213) ;}
+            25%{background-color: rgb(128, 0, 92);}
+            50%{background-color: rgb(38, 0, 255);}
+            100%{background-color: rgb(214, 250, 10);}
+        }
+         @keyframes triangle{
+            0% {background-color:rgb(220, 7, 121) ;}
+            25%{background-color: rgb(20, 6, 16);}
+            50%{background-color: rgb(255, 13, 0);}
+            100%{background-color: rgb(5, 211, 63);}
+         }
+        
+    </style>
+</head>
+<body>
+    <div class="square">
+    <div class="circle">
+     <div class="triangle">  
+</div>
+</div>
+    </div>
+</body>
+</html>
+

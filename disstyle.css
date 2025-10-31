@@ -1,0 +1,44 @@
+/* External CSS - styles.css */
+
+/* Universal selector */
+* {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Type selector */
+h2 {
+  color: #0b6d15;
+  margin: 20px;
+}
+
+/* Class selector */
+.intro {
+  background-color: #f01405;
+  padding: 12px;
+  border-left: 5px solid #e7ed42;
+  margin: 20px;
+  font-size: 16px;
+}
+
+/* ID selector */
+#special-heading {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 20px;
+}
+
+/* Button styling */
+button {
+  background-color: #5865F2; 
+  padding: 12px;
+  border-left: 5px solid #ED4245;
+  margin: 20px;
+  font-size: 16px;
+}
+/* Pseudo-class selector */
+button:hover {
+  background-color: #e41212;
+}

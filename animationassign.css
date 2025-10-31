@@ -1,0 +1,103 @@
+/* Reset and font setup */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Body gradient animation */
+body {
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(120deg, #6a11cb, #2575fc);
+  background-size: 200% 200%;
+  animation: bgMove 10s infinite alternate ease-in-out;
+  position: relative;
+  color: #fff;
+}
+
+/* Background circles */
+.background .circle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.4;
+  animation: float 8s infinite ease-in-out;
+}
+
+.circle1 {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, #ff7eb3, #ff758c);
+  top: 10%;
+  left: 15%;
+  animation-delay: 0s;
+}
+
+.circle2 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, #42e695, #3bb2b8);
+  bottom: 10%;
+  right: 10%;
+  animation-delay: 2s;
+}
+
+.circle3 {
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, #f6d365, #fda085);
+  top: 60%;
+  left: 60%;
+  animation-delay: 4s;
+}
+
+/* Floating animation */
+@keyframes float {
+  0% { transform: translateY(0) scale(1); opacity: 0.6; }
+  50% { transform: translateY(-30px) scale(1.05); opacity: 0.8; }
+  100% { transform: translateY(0) scale(1); opacity: 0.6; }
+}
+
+/* Gradient background movement */
+@keyframes bgMove {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+/* Foreground content */
+.content {
+  position: relative;
+  z-index: 5;
+  text-align: center;
+  top: 40%;
+  transform: translateY(-40%);
+}
+
+h1 {
+  font-size: 2.5rem;
+  letter-spacing: 1px;
+  text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+p {
+  margin: 15px 0 30px;
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+button {
+  padding: 12px 24px;
+  background: linear-gradient(90deg, #ff758c, #ff7eb3);
+  border: none;
+  border-radius: 25px;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(255, 120,180,0.6);
+}

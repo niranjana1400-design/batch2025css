@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Discord Task</title>
+
+  <!-- External Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Internal Stylesheet -->
+  <style>
+    /* Element Selector */
+    h1 {
+      color: #ff5733; /* Hex color */
+      font-size: 40px;
+      text-align: center;
+      border: 2px solid black;
+      background-color: rgb(240, 240, 240);
+    }
+
+    /* ID Selector */
+    #special-heading {
+      color: rgb(25, 100, 200); /* RGB color */
+      font-size: 28px;
+      border-bottom: 3px solid green;
+    }
+
+    /* Class Selector */
+    .highlight {
+      background-color: hsl(200, 70%, 80%); /* HSL color */
+      font-size: 18px;
+      color: darkblue;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    /* Universal Selector */
+    * {
+      font-family: Arial, sans-serif;
+    }
+
+    /* Group Selector */
+    h2, p {
+      margin: 10px;
+      padding: 5px;
+    }
+
+    /* Button Styling */
+    button {
+      background-color: #28a745;
+      color: white;
+      font-size: 16px;
+      border: 2px solid #155724;
+      padding: 10px 15px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Inline Stylesheet -->
+  <h1 style="color: purple; background-color: yellow;">Welcome to Discord</h1>
+
+  <h2 id="special-heading">Subheading</h2>
+
+  <p class="highlight">
+    This is a paragraph styled with a class selector using HSL background color.
+  </p>
+
+  <p>
+    This paragraph shows how grouping and universal selectors affect styling.
+  </p>
+
+  <button>Click Me</button>
+
+</body>
+</html>

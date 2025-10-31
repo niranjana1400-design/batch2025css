@@ -1,0 +1,88 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f3f4f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.badge {
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: red;
+      color: white;
+      font-size: 13px;
+      font-weight: bold;
+      padding: 4px 8px;
+      border-radius: 12px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+
+.notification-box {
+  background-color: #fff;
+  border-left: 5px solid #2d06f0; /* Green for success */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 15px 20px;
+  width: 300px;
+  border-radius: 5px;
+}
+
+.notification-box h3 {
+  margin: 0;
+  color: #49f454;
+  font-size: 18px;
+}
+
+.notification-box p {
+  margin-top: 8px;
+  color: #110e0e;
+  font-size: 14px;
+}
+ .notification-btn {
+      position: relative;
+      background: #ffffff;
+      border: none;
+      border-radius: 50%;
+      width: 70px;
+      height: 70px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      font-size: 30px;
+      color: #333;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: 0.3s ease;
+    }
+
+    .notification-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    }
+
+    /* Badge positioned on top center */
+    .badge {
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: red;
+      color: white;
+      font-size: 13px;
+      font-weight: bold;
+      padding: 4px 8px;
+      border-radius: 12px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+
+    /* Optional pop animation */
+    @keyframes pop {
+      0% { transform: translateX(-50%) scale(0); opacity: 0; }
+      100% { transform: translateX(-50%) scale(1); opacity: 1; }
+    }
+
+    .badge {
+      animation: pop 0.4s ;
+    }
